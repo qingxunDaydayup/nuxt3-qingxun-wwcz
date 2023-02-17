@@ -1,13 +1,18 @@
 # 说明
 
 ## 首要说明
-
 本项目采用 **yarn** 管理依赖
-
 yarn 安装指南: https://yarnpkg.com/getting-started/install
 
-## 启动
+## 介绍
+本项目nuxt3-qingxun-wwcz是字节跳动青训营-未完成组（这个“未完成组”是组名）的项目，选题为掘金页面
 
+## 一些开发规范
+1. 暂不强制使用ts开发，不熟悉ts的同学用js开发即可
+2. 变量名命名规范: 组件大驼峰, 变量名小驼峰
+3. 每次提交的代码不宜过多(上限100行左右)， 及时提交pr以及找人review
+
+## 启动
 ```bash
 # 装依赖
 yarn install
@@ -18,12 +23,50 @@ yarn run dev
 yarn dev -o
 ```
 
-## 介绍
+## git 规范
+### 拉取仓库
+```bash
+git clone git@github.com:qingxunDaydayup/nuxt3-qingxun-wwcz.git
+```
+### 新建自己的分支
+```bash
+git checkout -b 自己的分支名
+```
+### 提交规范
+```bash
+# 提交前确保代码书写规范
+git add .
+git commit -m "[种类] 代码描述"
+```
+commit 种类:
+- docs 修改文档
+- feat 新增功能
+- fix  修复bug
+- refactor 重构
+- style 修改样式
+- test 增加测试样例
+- spell 拼写错误/改进
+### 推送
+```bash
+# 推送前先更新主分支
+git pull origin main
 
-本项目nuxt3-qingxun-wwcz是字节跳动青训营-未完成组（这个“未完成组”是组名）的项目，选题为掘金页面
+# 在自己的分支下将main分支合并
+git merge main
+
+# 若有冲突，修改代码后重新提交一次
+
+# 推送
+git push origin 自己的分支
+
+# 到github上提交pr
+```
 
 ## 教程参考
-
+1. nuxt3官方文档: https://nuxt.com/docs
+2. CSDN教程-Nuxt3中文开发教程: https://blog.csdn.net/dvtop/category_12111537.html
+3. vue3官网: https://cn.vuejs.org/
+4. nuxt3快速入门视频: https://www.bilibili.com/video/BV1nG4y1u7EU
 
 
 ## 构建记录
