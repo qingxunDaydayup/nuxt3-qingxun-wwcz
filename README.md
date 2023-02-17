@@ -14,11 +14,17 @@ yarn install
 
 # 启动调试
 yarn run dev
+或
+yarn dev -o
 ```
 
 ## 介绍
 
 本项目nuxt3-qingxun-wwcz是字节跳动青训营-未完成组（这个“未完成组”是组名）的项目，选题为掘金页面
+
+## 教程参考
+
+
 
 ## 构建记录
 
