@@ -1,1 +1,6 @@
 /* https://nuxt.com/docs/api/configuration/nuxt-config#css */
+
+small {
+    color: #555;
+    font-style: italic;
+}
