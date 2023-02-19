@@ -49,9 +49,11 @@ commit 种类:
 ### 推送
 ```bash
 # 推送前先更新主分支
+git checkout main
 git pull origin main
 
 # 在自己的分支下将main分支合并
+git checkout 自己的分支
 git merge main
 
 # 若有冲突，修改代码后重新提交一次
