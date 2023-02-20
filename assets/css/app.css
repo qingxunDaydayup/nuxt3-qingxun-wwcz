@@ -1,1 +1,21 @@
-/* https://nuxt.com/docs/api/configuration/nuxt-config#css */
+/* nuxt配置CSS参考 https://nuxt.com/docs/api/configuration/nuxt-config#css */
+/* 响应式导入css文件参考 https://www.jianshu.com/p/412e908fbaa8 */
+
+/* 顶层使用 @charset */
+
+/* 紧接着使用 @import */
+/* 目前把大屏和普通笔记本屏幕设置成一样的布局 */
+@import url("middleScreen.css") only screen and (min-width: 1201px);
+@import url("ipadScreen.css") only screen and (max-width: 1200px);    /* 平板横屏 */
+@import url("ipadVeticalScreen.css") only screen and (max-width: 840px);    /* 平板竖屏 */
+@import url("phoneScreen.css") only screen and (max-width: 420px);    /* 手机 */
+
+/* 然后写其他配置 */
+small {
+    color: #333;
+    font-style: italic;
+}
+
+
+
+

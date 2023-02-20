@@ -35,7 +35,7 @@
         </div>
         <div v-show="!isArticlePage">
             <div>广告组件</div>
-            <div>作者榜</div>
+            <HomePageExcellentAuthors></HomePageExcellentAuthors>
             <div>备案信息</div>    
         </div>
         <div v-show="isArticlePage">
