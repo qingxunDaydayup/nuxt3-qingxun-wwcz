@@ -1,15 +1,19 @@
 /* 属性选择器参考 https://blog.csdn.net/zhangeer/article/details/127302164 */
-:root[theme=light], :root {
+:root[theme=light],
+:root {
     /* light 和 默认 */
-    --bgc: #F7FFF7;
-    --color: #00171F;
+    --bgc: #f4f5f5;
+    --color: #7d818b;
+    --small: #444;
+
 
 }
 
 :root[theme=dark] {
     /* dark */
-    --bgc: #0B132B;
-    --color: seashell; 
+    --bgc: #212322;
+    --color: #17d818b;
+    --small: #ddd;
 
 }
 
@@ -19,4 +23,9 @@ body {
     color: var(--color);
 
     transition: .5s linear;
+}
+
+small {
+    color: var(--small);
+    font-style: italic;
 }
