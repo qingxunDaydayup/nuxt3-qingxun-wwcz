@@ -5,10 +5,10 @@
 
 /* 紧接着使用 @import */
 /* 目前把大屏和普通笔记本屏幕设置成一样的布局 */
-@import url("middleScreen.css") only screen and (min-width: 1201px);
-@import url("ipadScreen.css") only screen and (max-width: 1200px);    /* 平板横屏 */
-@import url("ipadVeticalScreen.css") only screen and (max-width: 840px);    /* 平板竖屏 */
-@import url("phoneScreen.css") only screen and (max-width: 420px);    /* 手机 */
+@import url("screen/middleScreen.css") only screen and (min-width: 1201px);
+@import url("screen/ipadScreen.css") only screen and (max-width: 1200px);    /* 平板横屏 */
+@import url("screen/ipadVeticalScreen.css") only screen and (max-width: 840px);    /* 平板竖屏 */
+@import url("screen/phoneScreen.css") only screen and (max-width: 420px);    /* 手机 */
 
 /* 然后写其他配置 */
 small {
