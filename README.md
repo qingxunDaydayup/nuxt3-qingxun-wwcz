@@ -16,6 +16,10 @@ yarn 安装指南: https://yarnpkg.com/getting-started/install
 ```bash
 # 装依赖
 yarn install
+# 可能需要手动安装的依赖，如有相关报错，手动安装相关插件
+yarn add --dev markdown-it
+yarn add --dev markdown-it-container
+yarn add --dev highlight.js
 
 # 启动调试
 yarn run dev
