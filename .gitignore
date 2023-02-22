@@ -6,3 +6,6 @@ node_modules
 .output
 .env
 dist
+
+# 不能使用yarn的，可以又是pnpm运行，多久不用上传这个文件，所以添加到.gitignore
+pnpm-lock.yaml
