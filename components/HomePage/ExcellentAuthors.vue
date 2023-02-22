@@ -1,8 +1,10 @@
 <!-- 作者榜 -->
 <template>
-    <div>
-        🎖作者榜🏆
+    <div class="excellent-authors-container">
+        <div style="text-align: center;">🏆作者榜🏆</div>
+        
         <div v-for="item in authors" :key="item.id" style="
+            padding: .5rem;
             display:grid; 
             grid-template-columns: 4rem auto;
             grid-template-rows: 2rem 2rem;
@@ -13,11 +15,24 @@
                 <img style="width: 80%; height: 80%; border-radius:50%; " :src="item.portraitUrl" alt="图片裂开">
             </div>
             <span style="display:inline;  grid-area: username ">{{ item.username }} - {{ item.level }}</span>
-            <small style="grid-area: description">{{ item.description }}</small>
+            <small class="excellent-authors-description">{{ item.description }}</small>
         </div>
     </div>
 </template>
+<style>
+.excellent-authors-container {
+    background-color: var(--block-bgc);
+}
 
+.excellent-authors-description {
+    grid-area: description; 
+    height: 1rem;
+    width: 100%;
+    overflow: hidden;
+    /* 暂时没解决如何显示出下面这一行的省略号效果 */
+    text-overflow: ellipsis;
+}
+</style>
 <script setup>
 const {data: res} = await useAsyncData(
     'excellentAuthors',
