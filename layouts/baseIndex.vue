@@ -5,6 +5,7 @@
         <nav class="header-nav">
             <span><nuxt-link to="/">首页</nuxt-link></span>
             <span><nuxt-link to="/test/article/detail">测试文章页</nuxt-link></span>
+            <span><nuxt-link to="/test/article/markdown">markdown测试</nuxt-link></span>
             <span><nuxt-link to="/text/neirong/neirong">文章内容</nuxt-link></span>
             <span><nuxt-link to="/">首页</nuxt-link></span>
             <span><nuxt-link to="/">首页</nuxt-link></span>

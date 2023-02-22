@@ -23,7 +23,7 @@ const {data: res} = await useAsyncData(
     'excellentAuthors',
     () => $fetch(getFullUrl("/api/excellent-authors", ["portrait"]))
 )
-console.log("/api/excellent-authors RES",res.value.data);
+// console.log("/api/excellent-authors RES",res.value.data);
 
 // 参考：
 // [
