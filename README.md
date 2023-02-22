@@ -50,6 +50,7 @@ commit 种类:
 - style 修改样式
 - test 增加测试样例
 - spell 拼写错误/改进
+- useless 删除不实用的代码
 ### 推送
 ```bash
 # 推送前先更新主分支

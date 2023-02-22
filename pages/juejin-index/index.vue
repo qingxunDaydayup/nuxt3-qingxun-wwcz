@@ -69,7 +69,7 @@ const articleArr = [];
 // console.log("theUserfullData", theUsefulData);
 // console.log("res", res);
 res.value.data.forEach(element => {
-    console.log(element);
+    // console.log(element);
     let newItem = {
         id: element.id | null,
         title: element.attributes.title,
