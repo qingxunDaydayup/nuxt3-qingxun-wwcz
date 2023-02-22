@@ -1,27 +1,27 @@
 <template>
-<div class="total-container">
-    <header>
-        <h1 class="header-icon">掘金</h1>
-        <nav class="header-nav">
-            <span><nuxt-link to="/">首页</nuxt-link></span>
-            <span><nuxt-link to="/test/article/detail">测试文章页</nuxt-link></span>
-            <span><nuxt-link to="/test/article/markdown">markdown测试</nuxt-link></span>
-            <span><nuxt-link to="/text/neirong/neirong">文章内容</nuxt-link></span>
-            <span><nuxt-link to="/">首页</nuxt-link></span>
-            <span><nuxt-link to="/">首页</nuxt-link></span>
-        </nav>
-        <div class="user-box">用户信息</div>
-
-        <button @click="changeTheme">changeTheme</button>
-
-    </header>
-    <nav class="label-nav">
-        <span><nuxt-link to="/">index</nuxt-link></span>
-        <span><nuxt-link to="/">index</nuxt-link></span>
-        <span><nuxt-link to="/">index</nuxt-link></span>
-        <span><nuxt-link to="/">index</nuxt-link></span>
-        <span><nuxt-link to="/">index</nuxt-link></span>
+<header>
+    <h1 class="header-icon">掘金</h1>
+    <nav class="header-nav">
+        <span><nuxt-link class="header-nuxt-link" to="/">首页</nuxt-link></span>
+        <span><nuxt-link class="header-nuxt-link" to="/test/article/detail">测试文章页</nuxt-link></span>
+        <span><nuxt-link class="header-nuxt-link" to="/test/article/markdown">markdown测试</nuxt-link></span>
+        <span><nuxt-link class="header-nuxt-link" to="/text/neirong/neirong">文章内容</nuxt-link></span>
+        <span><nuxt-link class="header-nuxt-link" to="/juejin-index/">掘金首页</nuxt-link></span>
+        <span><nuxt-link class="header-nuxt-link" to="/">首页</nuxt-link></span>
     </nav>
+    <div class="user-box">用户信息</div>
+
+    <button @click="changeTheme">changeTheme</button>
+
+</header>
+<nav class="label-nav">
+    <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
+    <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
+    <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
+    <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
+    <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
+</nav>
+<div class="total-container">
 
     <!-- <aside class="left-aside">
         <div>点赞</div>

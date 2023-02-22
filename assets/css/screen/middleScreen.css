@@ -5,16 +5,19 @@ body {
 .total-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 16px;
+    grid-row-gap: 1px;
+    grid-column-gap: 16px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
-header {
+/* header {
     grid-column: 1 / 13;
 }
 
 .label-nav {
     grid-column: 1 / 13;
-}
+} */
 
 main {
     grid-column: 1 / 10;
