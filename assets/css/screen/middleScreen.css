@@ -1,14 +1,21 @@
 body {
     background-color: #ccc;
+    position: relative;
+    height: 100%;
 }
 
+
+
 .total-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 94px);
     grid-row-gap: 1px;
-    grid-column-gap: 16px;
-    margin-left: 10%;
-    margin-right: 10%;
+    grid-column-gap: 6px;
+    /* margin-left: 10%;
+    margin-right: 10%; */
 }
 
 /* header {
@@ -18,6 +25,17 @@ body {
 .label-nav {
     grid-column: 1 / 13;
 } */
+.total-container-with-label {
+    position: relative;
+    height: 100vh;
+}
+
+.label-nav {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 100;
+}
 
 main {
     grid-column: 1 / 10;

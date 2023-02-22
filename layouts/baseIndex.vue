@@ -14,46 +14,50 @@
     <button @click="changeTheme">changeTheme</button>
 
 </header>
-<nav class="label-nav">
-    <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
-    <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
-    <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
-    <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
-    <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
-</nav>
-<div class="total-container">
+<div class="total-container-with-label">
+    <!-- 为了label-nav能够sticky加了一个壳 -->
+    <nav class="label-nav">
+        <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
+        <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
+        <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
+        <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
+        <span><nuxt-link class="label-nuxt-link" to="/">index</nuxt-link></span>
+    </nav>
+    <div class="total-container">
 
-    <!-- <aside class="left-aside">
-        <div>点赞</div>
-        <div>投币</div>
-        <div>收藏</div>
-    </aside> -->
-    <!-- 计划单独做成文章详情页的组件 -->
+        <!-- <aside class="left-aside">
+            <div>点赞</div>
+            <div>投币</div>
+            <div>收藏</div>
+        </aside> -->
+        <!-- 计划单独做成文章详情页的组件 -->
 
-    <main>
-        <slot></slot>
-    </main>
+        <main>
+            <slot></slot>
+        </main>
 
-    <aside class="right-aside">
-        <div> 
-            <button @click="changeAside">切换</button>
-        </div>
-        <div v-show="!isArticlePage">
-            <div>广告组件</div>
-            <HomePageExcellentAuthors></HomePageExcellentAuthors>
-            <div>备案信息</div>    
-        </div>
-        <div v-show="isArticlePage">
-            <div>文章情况</div>
-            <div>相关文章</div>
-            <div>目录</div>
-        </div>
-    </aside>
+        <aside class="right-aside">
+            <div> 
+                <button @click="changeAside">切换</button>
+            </div>
+            <div v-show="!isArticlePage">
+                <div>广告组件</div>
+                <HomePageExcellentAuthors></HomePageExcellentAuthors>
+                <div>备案信息</div>    
+            </div>
+            <div v-show="isArticlePage">
+                <div>文章情况</div>
+                <div>相关文章</div>
+                <div>目录</div>
+            </div>
+        </aside>
 
-    <footer>
-        <div>footer</div>
-    </footer>
+        <footer>
+            <div>footer</div>
+        </footer>
+    </div>    
 </div>
+
 
 </template>
 
