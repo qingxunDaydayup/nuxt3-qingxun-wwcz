@@ -44,11 +44,11 @@
         </main>
 
         <aside class="right-aside">
-            <div> 
+            <!-- <div> 
                 <button @click="changeAside">切换</button>
-            </div>
+            </div> -->
             <div v-show="!isArticlePage">
-                <div>广告组件</div>
+                <HomePageAdvertisingBoard></HomePageAdvertisingBoard>
                 <HomePageExcellentAuthors></HomePageExcellentAuthors>
                 <div>备案信息</div>    
             </div>
@@ -138,5 +138,8 @@ header {
     padding-bottom: 20rem;
 }
 
+main {
+    margin-top: .3rem;
+}
 
 </style>

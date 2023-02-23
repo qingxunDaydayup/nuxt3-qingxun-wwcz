@@ -1,6 +1,6 @@
 <template>
     <div class="article-list-container">
-        <section class="article-section" v-for="item in articleArr" :key="item.id">
+        <section class="article-section" v-for="item in articleArr" :key="item.id" @click="routego(item.id)">
             <div>
                 <div class="article-firstline">{{ item.userName }} | {{ item.publishDatetime }}</div>
                 <div class="article-title">{{ item.title }} </div>
@@ -23,11 +23,13 @@
 }
 
 .article-section:hover {
+    cursor: pointer;
     background-color: var(--block-active-bgc);
 }
 
 .article-section > div {
-    border-top: 1px solid var(--bgc);
+    padding-top: 1rem;
+    border-bottom: 1px solid var(--bgc);
 
     display: grid;
     grid-template-rows: 4;
@@ -85,4 +87,11 @@ res.value.data.forEach(element => {
     };
     articleArr.push(newItem);
 });
+
+const route = useRouter();
+function routego(articleId) {
+    route.push({
+        path: `/juejin-article/${articleId}/detail`,
+    })
+}
 </script>
