@@ -60,6 +60,11 @@
 </style>
 
 <script setup>
+useSeoMeta({
+    title: "掘金-仿制首页",
+    location: "掘金-太阳系",
+    description: "这是一个由青训营-未完成组仿制的掘金首页"
+})
 const {data:res} = await useAsyncData(
     "fetchAriticleList",
     () => $fetch(getFullUrl("/api/qx-articles", ["qx_user"]))
