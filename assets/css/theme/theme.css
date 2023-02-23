@@ -59,7 +59,8 @@ header{
 
 /* nuxt-link的样式参考 https://www.cnblogs.com/shuiche/p/15727864.html */
 .header-nuxt-link, .label-nuxt-link {
-    color: var(--color)
+    color: var(--color);
+    text-decoration: none;
 }
 
 /* 下面两个类名是自带的 */
