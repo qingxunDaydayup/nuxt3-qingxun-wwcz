@@ -69,6 +69,11 @@
 </template>
 
 <script setup>
+useSeoMeta({
+    title: "掘金仿制项目",
+    viewport: "width=device-width, initial-scale=1.0"
+})
+
 const isArticlePage = ref(false);
 const changeAside = () => {
     isArticlePage.value = !isArticlePage.value;
