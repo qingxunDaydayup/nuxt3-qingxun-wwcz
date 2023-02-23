@@ -138,5 +138,8 @@ header {
     padding-bottom: 20rem;
 }
 
+main {
+    margin-top: .3rem;
+}
 
 </style>
