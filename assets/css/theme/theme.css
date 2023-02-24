@@ -39,7 +39,7 @@
     /* 高亮白色 */
     --highlight-white: #fff ;
     /* 弱化文字颜色 | 描述文字颜色 */
-    --small: #ddd;
+    --small: #5e5d5d;
 }
 
 body {
