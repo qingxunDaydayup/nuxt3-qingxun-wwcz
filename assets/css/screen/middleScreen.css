@@ -1,10 +1,25 @@
 body {
-    background-color: #ccc;
     position: relative;
     height: 100%;
 }
 
+/* 图标响应 */
+header > .header-icon > .small-icon {
+    display: none;
+}
 
+header > .header-icon > .big-icon {
+    display: inline-block;
+}
+
+/* 导航栏响应 */
+.header-nav-normal {
+    display: unset;
+}
+
+.header-nav-select {
+    display: none;
+}
 
 .total-container {
     position: absolute;
@@ -25,17 +40,6 @@ body {
 .label-nav {
     grid-column: 1 / 13;
 } */
-.total-container-with-label {
-    position: relative;
-    height: 100vh;
-}
-
-.label-nav {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    z-index: 100;
-}
 
 main {
     grid-column: 1 / 10;

@@ -1,3 +1,20 @@
 body {
     background-color: #6cf;
 }
+
+header > .header-icon > .small-icon {
+    display: inline-block;
+}
+
+header > .header-icon > .big-icon {
+    display: none;
+}
+
+/* 导航栏响应 */
+.header-nav-normal {
+    display: unset;
+}
+
+.header-nav-select {
+    display: none;
+}
