@@ -13,15 +13,27 @@
 </style>
 
 <script setup>
+import axios from 'axios'
+
 const { $renderMarkdown } = useNuxtApp();
 const routeInfo = useRoute();
 const articleId = routeInfo.params.articleId;
 
-const {data: res} = await useAsyncData(
-    'qx-article-detail',
-    () => $fetch(getFullUrl("api/qx-articles/"+articleId))
-)
+try {
+    const res = await axios.get( getFullUrl('api/qx-articles/'+articleId, ['qx_user']) )
+    // console.log("axios res", res)
+    const article = res.data.data;
+    const author = article.attributes.qx_user;
+    // console.log(author);
+    setAuthorNow(author);
+} catch (err) {
+    console.log("catch err", err);
+}
 
-const content = $renderMarkdown(res.value.data.attributes.content);
+const content = $renderMarkdown("# TESTING");
+
+
+
+
 
 </script>
