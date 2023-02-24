@@ -1,3 +1,16 @@
-body {
-    background-color: #c6f;
+header > .header-icon > .small-icon {
+    display: inline-block;
+}
+
+header > .header-icon > .big-icon {
+    display: none;
+}
+
+/* 导航栏响应 */
+.header-nav-normal {
+    display: none;
+}
+
+.header-nav-select {
+    display: inline-block;
 }
