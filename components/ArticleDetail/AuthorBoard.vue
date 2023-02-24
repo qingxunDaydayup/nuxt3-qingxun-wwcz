@@ -1,8 +1,9 @@
 <template>
     <div class="author-board-container">
-        <div class="icon-box"><img src="http://180.102.19.159:1337/uploads/1_cca592ca00.jpg" alt=""></div>
-        <div class="name-box">用户名</div>
-        <small class="des-box"> 一堆奇奇怪怪的描写撒扽苏打粉撒;该哈撒萨根;红A刚开s;减肥</small>
+        <div class="icon-box" v-show="!loadFinish"><img src="" alt="加载中"></div>
+        <div class="icon-box" v-show="loadFinish"><img :src="showAuthor.portraitUrl" alt=""></div>
+        <div class="name-box">{{ showAuthor.username }}</div>
+        <small class="des-box">{{ showAuthor.description }}</small>
         <div class="widget-box">
             <button class="widget-button">看TA主页</button>
         </div>
@@ -14,6 +15,7 @@
     background-color: var(--block-bgc);
     padding: 1rem;
     display: grid;
+    grid-template-columns: 4rem auto;
     grid-template-areas: 
         "icon name "
         "icon des "
@@ -32,7 +34,9 @@
 }
 
 .icon-box > img {
-    width: 4rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .name-box {
@@ -74,20 +78,36 @@
 </style>
 
 <script setup>
-// import axios from "axios";
+import axios from "axios";
+const routeInfo = useRoute();
 
-const author = useAuthorNow();
-
-// try {
-//     console.log("+++++++++++++");
-//     const res = await axios(getFullUrl(
-//         "/api/qx-user/"+author.data.id,
-//         ['portrait']
-//     ));
-//     console.log(res);
-
-// } catch (err) {
-//     console.error("request author err", err)
-// }
+// 在layout中已经设置好，只有路由匹配的时候才会渲染该组件，所以可以拿到articleId
+const articleId = routeInfo.params.articleId;
+let showAuthor = ref({});
+let loadFinish = ref(false)
+try {
+    const articleRes = await axios(
+        getFullUrl("api/qx-articles/"+articleId, ["qx_user"])
+    );
+    // console.log("articleRes", articleRes)
+    const authorId = articleRes.data.data.attributes.qx_user.data.id;
+    const authorRes = await axios(
+        getFullUrl("api/qx-users/" + authorId, ["portrait"])
+    );
+    // console.log("authorRes", authorRes);
+    const url = getBaseUrl()
+        + authorRes.data.data.attributes.portrait.data.attributes.url;
+    const authorInfo = authorRes.data.data;
+    // console.log("get the pic url:", url); 
+    showAuthor.value = {
+        id: authorInfo.id,
+        username: authorInfo.attributes.username,
+        description: authorInfo.attributes.description,
+        portraitUrl: url
+    }
+    loadFinish.value = true;
+} catch (err) {
+    console.info(err);
+}
 
 </script>
