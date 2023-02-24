@@ -24,11 +24,10 @@
 <div class="total-container-with-label">
     <!-- 为了label-nav能够sticky加了一个壳 -->
     <nav class="label-nav">
-        <span><span>tag</span></span>
-        <span><span>tag</span></span>
-        <span><span>tag</span></span>
-        <span><span>tag</span></span>
-        <span><span>tag</span></span>
+        <span v-for="tag in tagsArr" :key="tag.id" @click="setTagNow(tag)">
+            <span>{{ tag.tagName }}</span>
+        </span>
+        <span v-show="tagNow != null" @click="setTagNow(null)"><span>取消选择</span></span>
     </nav>
     <div class="total-container">
 
@@ -74,6 +73,25 @@ useSeoMeta({
     viewport: "width=device-width, initial-scale=1.0"
 })
 
+
+const {data: tagRes} = await useAsyncData(
+    "requestTagsList",
+    () => $fetch(getFullUrl('/api/qx-tags', ['qx_articles']))
+);
+console.log(tagRes);
+const tagsArr = [];
+tagRes.value.data.forEach( element => {
+    let newItem = {
+        id: element.id,
+        tagName: element.attributes.tagName,
+        relateArticles: element.attributes.qx_articles 
+    }
+    tagsArr.push(newItem)
+})
+
+const tagNow = useTagNow()
+// tagNow.value = tagsArr[0];
+
 const isArticlePage = ref(false);
 const changeAside = () => {
     isArticlePage.value = !isArticlePage.value;
@@ -116,6 +134,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .label-nav > span {
