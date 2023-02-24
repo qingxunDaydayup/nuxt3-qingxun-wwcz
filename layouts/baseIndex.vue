@@ -46,12 +46,12 @@
             <!-- <div> 
                 <button @click="changeAside">切换</button>
             </div> -->
-            <div v-show="!/^\/juejin-article\/*/.test(routeInfo.path)">
+            <div v-if="!/^\/juejin-article\/*/.test(routeInfo.path)">
                 <HomePageAdvertisingBoard></HomePageAdvertisingBoard>
                 <HomePageExcellentAuthors></HomePageExcellentAuthors>
                 <div>备案信息</div>    
             </div> 
-            <div v-show="/^\/juejin-article\/*/.test(routeInfo.path)">
+            <div v-if="/^\/juejin-article\/*/.test(routeInfo.path)">
                 <ArticleDetailAuthorBoard></ArticleDetailAuthorBoard>
                 <div>相关文章</div>
                 <div>目录</div>
