@@ -73,7 +73,6 @@ useSeoMeta({
     viewport: "width=device-width, initial-scale=1.0"
 })
 
-
 const {data: tagRes} = await useAsyncData(
     "requestTagsList",
     () => $fetch(getFullUrl('/api/qx-tags', ['qx_articles']))
@@ -90,9 +89,7 @@ tagRes.value.data.forEach( element => {
 })
 
 const tagNow = useTagNow()
-// tagNow.value = tagsArr[0];
 
-const isArticlePage = ref(false);
 const routeInfo = useRoute();
 
 </script>
@@ -156,6 +153,10 @@ header {
 }
 
 main {
+    margin-top: .3rem;
+}
+
+.right-aside {
     margin-top: .3rem;
 }
 
