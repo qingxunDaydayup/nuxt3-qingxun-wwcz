@@ -46,13 +46,13 @@
             <!-- <div> 
                 <button @click="changeAside">切换</button>
             </div> -->
-            <div v-show="!isArticlePage">
+            <div v-show="!/^\/juejin-article\/*/.test(routeInfo.path)">
                 <HomePageAdvertisingBoard></HomePageAdvertisingBoard>
                 <HomePageExcellentAuthors></HomePageExcellentAuthors>
                 <div>备案信息</div>    
-            </div>
-            <div v-show="isArticlePage">
-                <div>文章情况</div>
+            </div> 
+            <div v-show="/^\/juejin-article\/*/.test(routeInfo.path)">
+                <ArticleDetailAuthorBoard></ArticleDetailAuthorBoard>
                 <div>相关文章</div>
                 <div>目录</div>
             </div>
@@ -93,9 +93,7 @@ const tagNow = useTagNow()
 // tagNow.value = tagsArr[0];
 
 const isArticlePage = ref(false);
-const changeAside = () => {
-    isArticlePage.value = !isArticlePage.value;
-}
+const routeInfo = useRoute();
 
 </script>
 
