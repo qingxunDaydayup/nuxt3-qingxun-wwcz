@@ -23,7 +23,7 @@
 </header>
 <div class="total-container-with-label">
     <!-- 为了label-nav能够sticky加了一个壳 -->
-    <nav class="label-nav">
+    <nav class="label-nav" v-show="/^\/juejin-index/.test(routeInfo.path)">
         <span v-for="tag in tagsArr" :key="tag.id" @click="setTagNow(tag)">
             <span>{{ tag.tagName }}</span>
         </span>
