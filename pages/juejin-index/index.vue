@@ -82,7 +82,7 @@ res.value.data.forEach(element => {
     let newItem = {
         id: element.id | null,
         title: element.attributes.title,
-        publishDatetime: element.attributes.publishDatetime,
+        publishDatetime: dateTimeStrapiToDate(element.attributes.publishDatetime),
         description: element.attributes.description,
         userId: element.attributes.qx_user.data.id, 
         userName: element.attributes.qx_user.data.attributes.username,
