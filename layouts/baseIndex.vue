@@ -52,9 +52,9 @@
                 <div>备案信息</div>    
             </div> 
             <div v-if="/^\/juejin-article\/*/.test(routeInfo.path)">
-                <ArticleDetailAuthorBoard></ArticleDetailAuthorBoard>
+                <div><ArticleDetailAuthorBoard></ArticleDetailAuthorBoard></div>
+                <div><ArticleDetailSectionNav class="article-detail-section-nav"></ArticleDetailSectionNav></div>
                 <div>相关文章</div>
-                <div>目录</div>
             </div>
         </aside>
 
@@ -216,8 +216,13 @@ main {
     margin-top: .3rem;
 }
 
-.right-aside {
+/*.right-aside {
+    margin-top: .3rem;
+}*/
+
+.right-aside > div > div {
     margin-top: .3rem;
 }
+
 
 </style>
